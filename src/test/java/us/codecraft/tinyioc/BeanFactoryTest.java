@@ -4,6 +4,9 @@ package us.codecraft.tinyioc;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * author long029
+ */
 public class BeanFactoryTest {
     @Test
     public void test(){
