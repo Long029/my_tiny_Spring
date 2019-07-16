@@ -13,3 +13,6 @@
 
 修改了BeanDefiniation类, 增加属性BeanClass和BeanClassName
 在设置BeanClassName时会获取Class, 并赋值给BeanClass.
+
+-------------
+refactor

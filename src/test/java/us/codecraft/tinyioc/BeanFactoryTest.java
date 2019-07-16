@@ -3,6 +3,8 @@ package us.codecraft.tinyioc;
 
 import org.junit.Assert;
 import org.junit.Test;
+import us.codecraft.tinyioc.factory.AutowireCapableBeanFactory;
+import us.codecraft.tinyioc.factory.BeanFactory;
 
 public class BeanFactoryTest {
     @Test
