@@ -1,7 +1,8 @@
 package us.codecraft.tinyioc;
 
 public class HelloWorldService {
-    public void print(){
-        System.out.println("Hello World !");
+    public String helloWorld(){
+        String str = "Hello World !";
+        return str;
     }
 }

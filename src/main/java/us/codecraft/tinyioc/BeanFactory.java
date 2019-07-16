@@ -1,15 +1,7 @@
 package us.codecraft.tinyioc;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+public interface BeanFactory {
+    Object getBean(String name);
 
-public class BeanFactory {
-    private Map<String,BeanDefiniation> beanDefiniationMap = new ConcurrentHashMap<String, BeanDefiniation>();
-
-    public Object getBean(String name){
-        return beanDefiniationMap.get(name).getBean();
-    }
-    public void registerBeanDefinition(String name, BeanDefiniation beanDefiniation){
-        beanDefiniationMap.put(name,beanDefiniation);
-    }
+    void registerBeanDefinition(String name, BeanDefiniation beanDefiniation);
 }
