@@ -1,8 +1,9 @@
 package us.codecraft.tinyioc;
 
 public class HelloWorldService {
+    private String text;
+
     public String helloWorld(){
-        String str = "Hello World !";
-        return str;
+        return text;
     }
 }

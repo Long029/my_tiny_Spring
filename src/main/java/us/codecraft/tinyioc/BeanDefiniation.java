@@ -4,6 +4,7 @@ public class BeanDefiniation {
     private Object bean;
     private Class beanClass;
     private String beanClassName;
+    private PropertyValues propertyValues;
 
     public BeanDefiniation() {
     }
@@ -35,5 +36,13 @@ public class BeanDefiniation {
         } catch (ClassNotFoundException e) {
             System.out.println(e.getStackTrace());
         }
+    }
+
+    public PropertyValues getPropertyValues() {
+        return propertyValues;
+    }
+
+    public void setPropertyValues(PropertyValues propertyValues) {
+        this.propertyValues = propertyValues;
     }
 }
