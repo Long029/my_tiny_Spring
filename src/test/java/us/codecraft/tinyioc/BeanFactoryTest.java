@@ -28,7 +28,7 @@ public class BeanFactoryTest {
 
         HelloWorldService helloWorldService = (HelloWorldService) beanFactory.getBean("HelloWorldService");
         Assert.assertEquals("Hello World !", helloWorldService.helloWorld());
-
+//
 //        BeanDefiniation anotherBeanDefiniation = new BeanDefiniation();
 //        anotherBeanDefiniation.setBeanClassName("us.codecraft.tinyioc.EndClassService");
 //        beanFactory.registerBeanDefinition("EndClassService", anotherBeanDefiniation);
