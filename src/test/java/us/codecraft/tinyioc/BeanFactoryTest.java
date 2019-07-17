@@ -25,7 +25,6 @@ public class BeanFactoryTest {
 
         beanFactory.registerBeanDefinition("HelloWorldService", beanDefiniation);
 
-
         HelloWorldService helloWorldService = (HelloWorldService) beanFactory.getBean("HelloWorldService");
         Assert.assertEquals("Hello World !", helloWorldService.helloWorld());
 //
