@@ -32,3 +32,10 @@ refactor
 修改了AbstractBeanFactory, 使其在获得bean的实例后可以将PropertyValues中的propertyValue注入到bean的属性
 修改了HelloWorldService, 使其具有一个私有属性
 修改了BeanFactoryTest, 使其将PropertyValues注入, 测试
+
+-------------------step4
+新增BeanDefiniationReader接口
+新增AbstractBeanDefiniationReader类, 有注册列表和读取xml的Resource
+新增XmlBeanDefinationReader类, 实现接口并继承AbstractBeanFactoryReader, 主要功能为读取xml文件, 并根据文件内容生成
+BeanDefination, 注册
+新增测试类
