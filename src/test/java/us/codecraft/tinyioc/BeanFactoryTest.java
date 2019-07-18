@@ -3,8 +3,8 @@ package us.codecraft.tinyioc;
 
 import org.junit.Assert;
 import org.junit.Test;
+import us.codecraft.tinyioc.factory.AbstractBeanFactory;
 import us.codecraft.tinyioc.factory.AutowireCapableBeanFactory;
-import us.codecraft.tinyioc.factory.BeanFactory;
 
 /**
  * author long029
@@ -12,7 +12,7 @@ import us.codecraft.tinyioc.factory.BeanFactory;
 public class BeanFactoryTest {
     @Test
     public void test() {
-        BeanFactory beanFactory = new AutowireCapableBeanFactory();
+        AbstractBeanFactory beanFactory = new AutowireCapableBeanFactory();
 
         BeanDefiniation beanDefiniation = new BeanDefiniation();
         beanDefiniation.setBeanClassName("us.codecraft.tinyioc.HelloWorldService");

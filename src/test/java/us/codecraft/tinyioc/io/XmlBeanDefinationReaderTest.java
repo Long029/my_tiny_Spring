@@ -4,16 +4,15 @@ import org.junit.Assert;
 import org.junit.Test;
 import us.codecraft.tinyioc.BeanDefiniation;
 import us.codecraft.tinyioc.HelloWorldService;
+import us.codecraft.tinyioc.factory.AbstractBeanFactory;
 import us.codecraft.tinyioc.factory.AutowireCapableBeanFactory;
-import us.codecraft.tinyioc.factory.BeanFactory;
-
-import static org.junit.Assert.*;
+import us.codecraft.tinyioc.xml.XmlBeanDefinationReader;
 
 public class XmlBeanDefinationReaderTest {
 
     @Test
     public void test() throws Exception {
-        BeanFactory beanFactory = new AutowireCapableBeanFactory();
+        AbstractBeanFactory beanFactory = new AutowireCapableBeanFactory();
         XmlBeanDefinationReader xmlBeanDefinationReader = new XmlBeanDefinationReader(new ResourceLoader());
         xmlBeanDefinationReader.readBeanDefinations("tinyioc.xml");
         BeanDefiniation beanDefiniation = xmlBeanDefinationReader.getRegister().get("helloWorldService");

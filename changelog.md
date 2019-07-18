@@ -39,3 +39,6 @@ refactor
 新增XmlBeanDefinationReader类, 实现接口并继承AbstractBeanFactoryReader, 主要功能为读取xml文件, 并根据文件内容生成
 BeanDefination, 注册
 新增测试类
+
+-----------------step5
+这是一个大版本, ApplicationContext

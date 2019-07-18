@@ -13,7 +13,7 @@ public abstract class AbstractBeanFactory implements BeanFactory {
     public Object getBean(String name){
         return beanDefiniationMap.get(name).getBean();
     }
-    @Override
+
     public void registerBeanDefinition(String name, BeanDefiniation beanDefiniation){
         //此时的beanDefiniation中只有ClassName而已, 要通过ClassName创建一个它的实例
         Object bean = doCreateBean(beanDefiniation);
