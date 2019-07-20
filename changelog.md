@@ -42,3 +42,6 @@ BeanDefination, 注册
 
 -----------------step5
 这是一个大版本, ApplicationContext
+
+-----------------step 5
+两个bean有依赖的注入

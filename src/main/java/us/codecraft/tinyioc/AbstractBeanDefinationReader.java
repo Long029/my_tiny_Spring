@@ -6,15 +6,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class AbstractBeanDefinationReader implements BeanDefiniationReader {
-    private Map<String, BeanDefiniation> register;
+    private Map<String, BeanDefination> register;
     private ResourceLoader resourceLoader;
 
     public AbstractBeanDefinationReader(ResourceLoader resourceLoader) {
-        this.register = new HashMap<String, BeanDefiniation>();
+        this.register = new HashMap<String, BeanDefination>();
         this.resourceLoader = resourceLoader;
     }
 
-    public Map<String, BeanDefiniation> getRegister() {
+    public Map<String, BeanDefination> getRegister() {
         return register;
     }
 

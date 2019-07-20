@@ -1,7 +1,6 @@
 package us.codecraft.tinyioc;
 
 
-import org.junit.Assert;
 import org.junit.Test;
 import us.codecraft.tinyioc.factory.AbstractBeanFactory;
 import us.codecraft.tinyioc.factory.AutowireCapableBeanFactory;
@@ -12,27 +11,20 @@ import us.codecraft.tinyioc.factory.AutowireCapableBeanFactory;
 public class BeanFactoryTest {
     @Test
     public void test() {
-        AbstractBeanFactory beanFactory = new AutowireCapableBeanFactory();
 
-        BeanDefiniation beanDefiniation = new BeanDefiniation();
-        beanDefiniation.setBeanClassName("us.codecraft.tinyioc.HelloWorldService");
+        BeanDefination beanDefination = new BeanDefination();
+        beanDefination.setBeanClassName("us.codecraft.tinyioc.HelloWorldService");
+        AbstractBeanFactory beanFactory = new AutowireCapableBeanFactory();
 
         PropertyValue propertyValue = new PropertyValue("text", "Hello World !");
         PropertyValues propertyValues = new PropertyValues();
         propertyValues.addPropertyValue(propertyValue);
 
-        beanDefiniation.setPropertyValues(propertyValues);
+        beanDefination.setPropertyValues(propertyValues);
 
-        beanFactory.registerBeanDefinition("HelloWorldService", beanDefiniation);
+        beanFactory.registerBeanDefinition("HelloWorldService", beanDefination);
 
         HelloWorldService helloWorldService = (HelloWorldService) beanFactory.getBean("HelloWorldService");
-        Assert.assertEquals("Hello World !", helloWorldService.helloWorld());
-//
-//        BeanDefiniation anotherBeanDefiniation = new BeanDefiniation();
-//        anotherBeanDefiniation.setBeanClassName("us.codecraft.tinyioc.EndClassService");
-//        beanFactory.registerBeanDefinition("EndClassService", anotherBeanDefiniation);
-//
-//        EndClassService endClassService = (EndClassService) beanFactory.getBean("EndClassService");
-//        Assert.assertEquals("We can go home now..", endClassService.goHome());
+
     }
 }

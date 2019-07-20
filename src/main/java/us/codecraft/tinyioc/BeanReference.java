@@ -1,12 +1,11 @@
 package us.codecraft.tinyioc;
 
-public class PropertyValue {
+public class BeanReference {
     private String name;
-    private final Object value;
+    private Object bean;
 
-    public PropertyValue(String name, Object value) {
+    public BeanReference(String name) {
         this.name = name;
-        this.value = value;
     }
 
     public String getName() {
@@ -17,8 +16,11 @@ public class PropertyValue {
         this.name = name;
     }
 
-    public Object getValue() {
-        return value;
+    public Object getBean() {
+        return bean;
     }
 
+    public void setBean(Object bean) {
+        this.bean = bean;
+    }
 }

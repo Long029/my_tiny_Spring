@@ -5,9 +5,11 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import us.codecraft.tinyioc.AbstractBeanDefinationReader;
-import us.codecraft.tinyioc.BeanDefiniation;
+import us.codecraft.tinyioc.BeanDefination;
+import us.codecraft.tinyioc.BeanReference;
 import us.codecraft.tinyioc.PropertyValue;
 import us.codecraft.tinyioc.io.ResourceLoader;
+import us.codecraft.tinyioc.util.StringUtils;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -55,13 +57,13 @@ public class XmlBeanDefinationReader extends AbstractBeanDefinationReader {
     private void processBeanDefination(Element el) {
         String name = el.getAttribute("name");
         String className = el.getAttribute("class");
-        BeanDefiniation beanDefiniation = new BeanDefiniation();
-        beanDefiniation.setBeanClassName(className);
-        registBeanDefinationProperty(el,beanDefiniation);
-        getRegister().put(name, beanDefiniation);
+        BeanDefination beanDefination = new BeanDefination();
+        beanDefination.setBeanClassName(className);
+        registBeanDefinationProperty(el, beanDefination);
+        getRegister().put(name, beanDefination);
     }
 
-    private void registBeanDefinationProperty(Element el, BeanDefiniation beanDefiniation) {
+    private void registBeanDefinationProperty(Element el, BeanDefination beanDefination) {
         NodeList nl = el.getChildNodes();
         Node node;
         Element element;
@@ -73,7 +75,17 @@ public class XmlBeanDefinationReader extends AbstractBeanDefinationReader {
                 element = (Element) node;
                 proName = element.getAttribute("name");
                 proValue = element.getAttribute("value");
-                beanDefiniation.getPropertyValues().addPropertyValue(new PropertyValue(proName, proValue));
+                if(StringUtils.isNotEmpt(proValue)){
+                    beanDefination.getPropertyValues().addPropertyValue(new PropertyValue(proName, proValue));
+                }else{
+                    String ref = element.getAttribute("ref");
+                    if (ref == null || ref.length() == 0) {
+                        throw new IllegalArgumentException("Configuration problem: <property> element for property '"
+                                + proName + "' must specify a ref or value");
+                    }
+                    BeanReference beanReference = new BeanReference(proName);
+                    beanDefination.getPropertyValues().addPropertyValue(new PropertyValue(proName, beanReference));
+                }
             }
         }
     }

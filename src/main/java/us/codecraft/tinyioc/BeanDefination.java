@@ -1,12 +1,12 @@
 package us.codecraft.tinyioc;
 
-public class BeanDefiniation {
+public class BeanDefination {
     private Object bean;
     private Class beanClass;
     private String beanClassName;
     private PropertyValues propertyValues = new PropertyValues();
 
-    public BeanDefiniation() {
+    public BeanDefination() {
     }
 
     public Object getBean() {
