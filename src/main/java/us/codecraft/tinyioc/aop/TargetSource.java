@@ -1,5 +1,8 @@
 package us.codecraft.tinyioc.aop;
 
+/**
+ * 被代理的对象
+ */
 public class TargetSource {
     private Class targetClass;
     private Object target;
