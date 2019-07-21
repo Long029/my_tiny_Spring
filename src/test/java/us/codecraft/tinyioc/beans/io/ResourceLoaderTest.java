@@ -1,4 +1,4 @@
-package us.codecraft.tinyioc.io;
+package us.codecraft.tinyioc.beans.io;
 
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -6,8 +6,6 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
-
-import static org.junit.Assert.*;
 
 public class ResourceLoaderTest {
 

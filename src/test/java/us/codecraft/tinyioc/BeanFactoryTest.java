@@ -2,8 +2,11 @@ package us.codecraft.tinyioc;
 
 
 import org.junit.Test;
-import us.codecraft.tinyioc.factory.AbstractBeanFactory;
-import us.codecraft.tinyioc.factory.AutowireCapableBeanFactory;
+import us.codecraft.tinyioc.beans.BeanDefination;
+import us.codecraft.tinyioc.beans.PropertyValue;
+import us.codecraft.tinyioc.beans.PropertyValues;
+import us.codecraft.tinyioc.beans.factory.AbstractBeanFactory;
+import us.codecraft.tinyioc.beans.factory.AutowireCapableBeanFactory;
 
 /**
  * author long029

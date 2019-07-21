@@ -1,5 +1,8 @@
-package us.codecraft.tinyioc;
+package us.codecraft.tinyioc.beans;
 
+/**
+ * bean的元数据及内容, 包装bean的实体.存放在BeanFactory中
+ */
 public class BeanDefination {
     private Object bean;
     private Class beanClass;

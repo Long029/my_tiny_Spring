@@ -1,14 +1,14 @@
-package us.codecraft.tinyioc.xml;
+package us.codecraft.tinyioc.beans.xml;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import us.codecraft.tinyioc.AbstractBeanDefinationReader;
-import us.codecraft.tinyioc.BeanDefination;
+import us.codecraft.tinyioc.beans.AbstractBeanDefinationReader;
+import us.codecraft.tinyioc.beans.BeanDefination;
 import us.codecraft.tinyioc.BeanReference;
-import us.codecraft.tinyioc.PropertyValue;
-import us.codecraft.tinyioc.io.ResourceLoader;
+import us.codecraft.tinyioc.beans.PropertyValue;
+import us.codecraft.tinyioc.beans.io.ResourceLoader;
 import us.codecraft.tinyioc.util.StringUtils;
 
 import javax.xml.parsers.DocumentBuilder;

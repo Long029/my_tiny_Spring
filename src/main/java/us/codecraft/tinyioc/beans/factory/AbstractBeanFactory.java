@@ -1,6 +1,6 @@
-package us.codecraft.tinyioc.factory;
+package us.codecraft.tinyioc.beans.factory;
 
-import us.codecraft.tinyioc.BeanDefination;
+import us.codecraft.tinyioc.beans.BeanDefination;
 
 import java.util.ArrayList;
 import java.util.Iterator;

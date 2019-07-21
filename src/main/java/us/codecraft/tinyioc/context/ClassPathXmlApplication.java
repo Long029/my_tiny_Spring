@@ -1,16 +1,15 @@
 package us.codecraft.tinyioc.context;
 
-import us.codecraft.tinyioc.BeanDefination;
-import us.codecraft.tinyioc.factory.AbstractBeanFactory;
-import us.codecraft.tinyioc.factory.AutowireCapableBeanFactory;
-import us.codecraft.tinyioc.io.ResourceLoader;
-import us.codecraft.tinyioc.xml.XmlBeanDefinationReader;
+import us.codecraft.tinyioc.beans.BeanDefination;
+import us.codecraft.tinyioc.beans.factory.AbstractBeanFactory;
+import us.codecraft.tinyioc.beans.factory.AutowireCapableBeanFactory;
+import us.codecraft.tinyioc.beans.io.ResourceLoader;
+import us.codecraft.tinyioc.beans.xml.XmlBeanDefinationReader;
 
 import java.util.Map;
 
 public class ClassPathXmlApplication extends AbstractApplicationContext {
 
-    private AbstractBeanFactory abstractBeanFactory;
     private String location;
 
     public ClassPathXmlApplication(String location) {
@@ -35,13 +34,13 @@ public class ClassPathXmlApplication extends AbstractApplicationContext {
         //为什么不在此处直接将xmlBeanDefinationReader中的Register 获取后直接放入abstractBeanFactory?
         //因为abstractBeanFactory并不支持setMap
         for (Map.Entry<String, BeanDefination> beanDefiniationEntry: xmlBeanDefinationReader.getRegister().entrySet()){
-            abstractBeanFactory.registerBeanDefinition(beanDefiniationEntry.getKey(), beanDefiniationEntry.getValue());
+            beanFactory.registerBeanDefinition(beanDefiniationEntry.getKey(), beanDefiniationEntry.getValue());
         }
 
     }
 
     @Override
     public Object getBean(String name) {
-        return abstractBeanFactory.getBean(name);
+        return beanFactory.getBean(name);
     }
 }

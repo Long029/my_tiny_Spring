@@ -1,6 +1,6 @@
 package us.codecraft.tinyioc.context;
 
-import us.codecraft.tinyioc.factory.BeanFactory;
+import us.codecraft.tinyioc.beans.factory.BeanFactory;
 
 public interface ApplicationContext extends BeanFactory {
 }
