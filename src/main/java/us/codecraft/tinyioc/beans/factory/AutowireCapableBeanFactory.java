@@ -10,15 +10,8 @@ import java.lang.reflect.Field;
  * 可自动装配的beanFactory
  */
 public class AutowireCapableBeanFactory extends AbstractBeanFactory {
-    @Override
-    protected Object doCreateBean(BeanDefination beanDefination) {
-        Object bean = createBeanInstance(beanDefination);
-        beanDefination.setBean(bean);
-        setBeanFeild(beanDefination, bean);
-        return bean;
-    }
 
-    private void setBeanFeild(BeanDefination beanDefination, Object bean) {
+    protected void setBeanFeild(BeanDefination beanDefination, Object bean) throws Exception {
         try {
             for (PropertyValue propertyValue : beanDefination.getPropertyValues().getPropertyValues()) {
                 Field field = bean.getClass().getDeclaredField(propertyValue.getName());
@@ -38,15 +31,4 @@ public class AutowireCapableBeanFactory extends AbstractBeanFactory {
 
     }
 
-    private Object createBeanInstance(BeanDefination beanDefination) {
-        try {
-            Object bean = beanDefination.getBeanClass().newInstance();
-            return bean;
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 }

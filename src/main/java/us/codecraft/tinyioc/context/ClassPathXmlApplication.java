@@ -27,20 +27,18 @@ public class ClassPathXmlApplication extends AbstractApplicationContext {
     }
 
     @Override
-    public void refresh() throws Exception{
-        //location是一个文件路径, 需要把文件读取, 并解析到beanFactory中
+    protected void loadBeanDefinition(AbstractBeanFactory beanFactory) throws Exception {
         XmlBeanDefinationReader xmlBeanDefinationReader = new XmlBeanDefinationReader(new ResourceLoader());
         xmlBeanDefinationReader.readBeanDefinations(location);
         //为什么不在此处直接将xmlBeanDefinationReader中的Register 获取后直接放入abstractBeanFactory?
         //因为abstractBeanFactory并不支持setMap
-        for (Map.Entry<String, BeanDefination> beanDefiniationEntry: xmlBeanDefinationReader.getRegister().entrySet()){
-            beanFactory.registerBeanDefinition(beanDefiniationEntry.getKey(), beanDefiniationEntry.getValue());
+        for (Map.Entry<String, BeanDefination> beanDefinationEntry : xmlBeanDefinationReader.getRegister().entrySet()){
+            beanFactory.registerBeanDefinition(beanDefinationEntry.getKey(), beanDefinationEntry.getValue());
         }
-
     }
 
     @Override
-    public Object getBean(String name) {
+    public Object getBean(String name) throws Exception {
         return beanFactory.getBean(name);
     }
 }

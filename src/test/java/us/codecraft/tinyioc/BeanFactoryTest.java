@@ -13,7 +13,7 @@ import us.codecraft.tinyioc.beans.factory.AutowireCapableBeanFactory;
  */
 public class BeanFactoryTest {
     @Test
-    public void test() {
+    public void test() throws Exception {
 
         BeanDefination beanDefination = new BeanDefination();
         beanDefination.setBeanClassName("us.codecraft.tinyioc.HelloWorldService");

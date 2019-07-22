@@ -7,7 +7,6 @@ import us.codecraft.tinyioc.HelloWorldService;
 import us.codecraft.tinyioc.beans.factory.AbstractBeanFactory;
 import us.codecraft.tinyioc.beans.factory.AutowireCapableBeanFactory;
 import us.codecraft.tinyioc.beans.io.ResourceLoader;
-import us.codecraft.tinyioc.beans.xml.XmlBeanDefinationReader;
 
 import java.util.Map;
 
@@ -17,7 +16,7 @@ public class XmlBeanDefinationReaderTest {
     public void test() throws Exception {
 
         XmlBeanDefinationReader xmlBeanDefinationReader = new XmlBeanDefinationReader(new ResourceLoader());
-        xmlBeanDefinationReader.readBeanDefinations("tinyioc.xml");
+        xmlBeanDefinationReader.readBeanDefinations("tinyioc-postbeanprocessor.xml");
 
         AbstractBeanFactory beanFactory = new AutowireCapableBeanFactory();
         for (Map.Entry<String, BeanDefination> beanDefinitionEntry : xmlBeanDefinationReader.getRegister().entrySet()) {

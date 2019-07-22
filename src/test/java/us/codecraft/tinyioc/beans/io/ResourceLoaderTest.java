@@ -13,7 +13,7 @@ public class ResourceLoaderTest {
     @Test
     public void getResource() throws IOException {
         ResourceLoader resourceLoader = new ResourceLoader();
-        Resource resource = resourceLoader.getResource("tinyioc.xml");
+        Resource resource = resourceLoader.getResource("tinyioc-postbeanprocessor.xml");
         InputStream inputStream = resource.getInputStream();
         Assert.assertNotNull(inputStream);
     }

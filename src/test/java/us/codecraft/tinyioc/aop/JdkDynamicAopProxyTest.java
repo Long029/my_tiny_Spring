@@ -7,8 +7,8 @@ import us.codecraft.tinyioc.context.ClassPathXmlApplication;
 
 public class JdkDynamicAopProxyTest {
     @Test
-    public void test(){
-        ApplicationContext applicationContext = new ClassPathXmlApplication("tinyioc.xml");
+    public void test() throws Exception {
+        ApplicationContext applicationContext = new ClassPathXmlApplication("tinyioc-postbeanprocessor.xml");
         HelloWorldService helloWorldService = (HelloWorldService) applicationContext.getBean("helloWorldService");
 
         //设置被代理代理对象
